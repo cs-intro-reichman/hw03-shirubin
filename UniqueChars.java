@@ -12,6 +12,21 @@ public class UniqueChars {
      */
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
-        return null;
+        String newStr = "";
+        boolean add=true;
+        for (int i = 0; i < s.length(); i++) {
+            add=true;
+            String substr = s.substring(0, i);
+            char letter = s.charAt(i);
+            if(substr.indexOf(letter)!=-1&& letter!=' '){
+                System.out.println(i +" sub");
+                add=false;
+            }
+
+            if (add==true){
+                newStr +=s.charAt(i);
+            }
+        }
+        return newStr;
     }
 }
