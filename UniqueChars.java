@@ -19,7 +19,6 @@ public class UniqueChars {
             String substr = s.substring(0, i);
             char letter = s.charAt(i);
             if(substr.indexOf(letter)!=-1&& letter!=' '){
-                System.out.println(i +" sub");
                 add=false;
             }
 
