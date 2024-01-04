@@ -42,7 +42,7 @@ public class LoanCalc {
     	// Replace the following statement with your code
 		double increment = 0.0001; 
 		double payment = loan/n;
-        while (Math.abs(endBalance(loan, rate, n, payment)) >= epsilon) {
+        while (endBalance(loan, rate, n, payment) >= epsilon) {
         	payment += increment;
         	iterationCounter++;
 	  	} 
@@ -61,7 +61,7 @@ public class LoanCalc {
 		double payment = (low + high) / 2.0;
 
 		while (high-low > epsilon) {
-		    if (Math.abs(endBalance(loan, rate, n, payment)*endBalance(loan, rate, n, low))> 0){
+		    if (endBalance(loan, rate, n, payment)*endBalance(loan, rate, n, low)> 0){
 				low = payment;
 		    }
 			  
