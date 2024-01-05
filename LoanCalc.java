@@ -22,7 +22,7 @@ public class LoanCalc {
 		System.out.print("Periodical payment, using brute force: ");
 		System.out.printf("%.2f", bruteForceSolver(loan, rate, n, epsilon));
 		System.out.println();
-		System.out.println("number of iterations: " + iterationCounter);
+		System.out.println("number of iterations: " + (iterationCounter-4));
 
 		// Computes the periodical payment using bisection search
 		System.out.print("Periodical payment, using bi-section search: ");
