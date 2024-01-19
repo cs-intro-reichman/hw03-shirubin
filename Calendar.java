@@ -20,7 +20,9 @@ public class Calendar {
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
-	 	while (month!=1 || dayOfMonth!=1 || year!=chosenYear-1) {
+		
+		// #feedback: you expect to achieve chosenYear, let's make this condition clearer
+	 	while (year < chosenYear) {
 	 		//// Write the body of the while 		
 	 		advance();
 	 		//// If you want to stop the loop after n days, replace the condition of the
@@ -28,14 +30,17 @@ public class Calendar {
 	 		// if (debugDaysCounter == 620) { 
 	 		// 	break;
 	 		// }
+			
         }
 	 	//// Write the necessary ending code here
-        while (month!=1 || dayOfMonth!=1 || year!=chosenYear+1) {
-			String date =dayOfMonth + "/" + month + "/" + year;
+		// #feedback: you expect to itterate all over chosenYear, let's make this condition clearer
+        	while (year <= chosenYear) {
+			String date = dayOfMonth + "/" + month + "/" + year;
 			boolean isSunday = (dayOfWeek==1);
 			
 			if (isSunday) {
 				date += " Sunday";
+				// #feedback: dayOfMonth = 1, then... what?
 				if(dayOfMonth==1){
 				}
 				
@@ -85,10 +90,14 @@ public class Calendar {
 		else{
 			dayOfWeek++;
 		}
-		
-		if(nDaysInMonth!=nDaysInMonth(month, year)){
-			nDaysInMonth=nDaysInMonth(month, year);
-		}
+
+		/* 
+  			#feedback: 
+     			Basically you calculated `nDaysInMonth` in the if statement, than ask if it's different,
+			and if it is you update with calculating it again.
+   			Why not to just update it in any case?
+		*/	
+		nDaysInMonth=nDaysInMonth(month, year);
 
 		// Replace this comment with your code
 	 } 
