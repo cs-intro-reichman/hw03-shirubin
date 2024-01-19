@@ -16,9 +16,8 @@ public class LowerCase {
             char letter =s.charAt(i);
             int letterInt = s.charAt(i);
             if(letterInt>=65 && letterInt<=90){
-                //System.out.println(letterInt);
-                letter = (char)(letterInt-65+97);
-                //System.out.println(letter);
+                // #feedback: 97-65=32
+                letter = (char)(letterInt+32);
             }
             newStr += letter;
         }
