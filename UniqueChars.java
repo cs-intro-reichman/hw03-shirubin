@@ -13,7 +13,7 @@ public class UniqueChars {
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
         String newStr = "";
-        // #feedback: really bad usage of this variable, it value use only onced as condition and you define it many times.
+        // #feedback: really bad usage of this variable, it value used only once as condition and you define it many times.
         for (int i = 0; i < s.length(); i++) {
             String substr = s.substring(0, i);
             char letter = s.charAt(i);
