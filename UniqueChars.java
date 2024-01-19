@@ -13,16 +13,11 @@ public class UniqueChars {
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
         String newStr = "";
-        boolean add=true;
+        // #feedback: really bad usage of this variable, it value use only onced as condition and you define it many times.
         for (int i = 0; i < s.length(); i++) {
-            add=true;
             String substr = s.substring(0, i);
             char letter = s.charAt(i);
-            if(substr.indexOf(letter)!=-1&& letter!=' '){
-                add=false;
-            }
-
-            if (add==true){
+            if(substr.indexOf(letter) == -1 || letter == ' '){
                 newStr +=s.charAt(i);
             }
         }
