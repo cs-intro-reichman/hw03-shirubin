@@ -40,14 +40,16 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
-		double increment = 0.001; 
+	    	// #feedback: when you use static paramters, you should initialize it - in case bisectionSolver called before this method it will lead wrong answer
+		iterationCounter = 0;
+	    	// #feedback: you should use epsilon for increaments
 		double payment = loan/n;
-		// System.out.println(loan + " " + rate + " " + n + " " + epsilon + " "+payment);
-        while (endBalance(loan, rate, n, payment) >= epsilon) {
-        	payment += increment;
-        	iterationCounter++;
+	    	// #feedback: try to not leave "historical" code 
+        	while (endBalance(loan, rate, n, payment) >= epsilon) {
+        		payment += epsilon;
+        		iterationCounter++;
 	  	} 
-    	return payment;
+    		return payment;
     }
     
     /**
